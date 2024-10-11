@@ -2,7 +2,10 @@
     "name": "@saas/api",
     "version": "1.0.0",
     "scripts": {
-        "dev": "tsx watch src/index.ts"
+        "dev": "npm run env:load tsx watch src/http/server.ts",
+        "db:migrate": "pnpm env:load prisma migrate dev",
+        "db:studio": "pnpm env:load prisma studio",
+        "env:load": "dotenv -e ../../.env --"
     },
     "prettier": "@saas/prettier",
     "eslintConfig": {
@@ -12,6 +15,23 @@
     },
     "devDependencies": {
         "@types/node": "^22.7.4",
+        "dotenv-cli": "^7.4.2",
+        "prisma": "^5.20.0",
         "tsx": "^4.19.1"
+    },
+    "prisma": {
+        "seed": "tsx prisma/seed.ts"
+    },
+    "dependencies": {
+        "@faker-js/faker": "^9.0.3",
+        "@fastify/cors": "^10.0.1",
+        "@fastify/jwt": "^9.0.1",
+        "@fastify/swagger": "^9.1.0",
+        "@fastify/swagger-ui": "^5.0.1",
+        "@prisma/client": "^5.20.0",
+        "fastify": "^5.0.0",
+        "fastify-plugin": "^5.0.1",
+        "fastify-type-provider-zod": "^4.0.1",
+        "zod": "^3.23.8"
     }
 }

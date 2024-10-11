@@ -7,6 +7,7 @@
     "lint": "turbo lint"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "turbo": "^2.1.2"
   },
   "engines": {
@@ -17,5 +18,8 @@
     "apps/*",
     "packages/*",
     "config/*"
-  ]
+  ],
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  }
 }
